@@ -1,0 +1,88 @@
+{
+  "release": "tree-ab-deps-v1",
+  "baselineCommon": "f307a332775af54e3797b4b9c80d48ebcda8e5bb",
+  "fixtures": [
+    {
+      "framework": "react",
+      "variant": "before",
+      "componentCommit": "d31df33c40a774d435fd00580f72d99f4d271cf0",
+      "baselineCommon": "f307a332775af54e3797b4b9c80d48ebcda8e5bb",
+      "fixCommit": "d4f2e934bc5ff97e4198cc9ddeadbbc4b75010a8",
+      "changedSourceFiles": [],
+      "sourceFileCount": 2334,
+      "sourceInventorySha256": "2ce0170b75f5f39cb36d916494f4266e1654e4344986658a52dfdd0710ad5558",
+      "buildTools": {
+        "esbuild": "0.25.12",
+        "babel": "7.27.4"
+      },
+      "packageName": "@tdesign-tree-ab/react",
+      "version": "0.0.0-f307a332",
+      "tarball": "tdesign-tree-ab-react-0.0.0-f307a332.tgz",
+      "integrity": "sha512-k+mbh4Gh3XHHtgRWADQTU4wlaacdPsm1IAhgDR21P0ynXnbQ5yxc6MrDZ1Y8kCyTuURhFj+DsGbgymvF/GjdzA==",
+      "url": "https://github.com/RSS1102/tdesign-tree-disabled-ab/releases/download/tree-ab-deps-v1/tdesign-tree-ab-react-0.0.0-f307a332.tgz"
+    },
+    {
+      "framework": "react",
+      "variant": "after",
+      "componentCommit": "d31df33c40a774d435fd00580f72d99f4d271cf0",
+      "baselineCommon": "f307a332775af54e3797b4b9c80d48ebcda8e5bb",
+      "fixCommit": "d4f2e934bc5ff97e4198cc9ddeadbbc4b75010a8",
+      "changedSourceFiles": [
+        "packages/common/js/tree-v1/tree-node.ts",
+        "packages/common/js/tree-v1/tree-store.ts"
+      ],
+      "sourceFileCount": 2334,
+      "sourceInventorySha256": "25ba85dbb4b0e6a73799ba254ab8d2a8b269d7454967fbd31e86bb0c2f5dd0a0",
+      "buildTools": {
+        "esbuild": "0.25.12",
+        "babel": "7.27.4"
+      },
+      "packageName": "@tdesign-tree-ab/react",
+      "version": "0.0.0-d4f2e934",
+      "tarball": "tdesign-tree-ab-react-0.0.0-d4f2e934.tgz",
+      "integrity": "sha512-faCgm6Xq2eAPJioxR8YPw9UMKe3sk5B/4QNxTJplKe3HyWK/mM3ZX3x1Av+lZLOaoegtVkB1RPygiTyhyeFNjQ==",
+      "url": "https://github.com/RSS1102/tdesign-tree-disabled-ab/releases/download/tree-ab-deps-v1/tdesign-tree-ab-react-0.0.0-d4f2e934.tgz"
+    },
+    {
+      "framework": "vue-next",
+      "variant": "before",
+      "componentCommit": "9005d97748a73eb02b5667e5f25a5ad3f3c1a65c",
+      "baselineCommon": "f307a332775af54e3797b4b9c80d48ebcda8e5bb",
+      "fixCommit": "2d5d75f7373854b8590f9e1ef2e5fe8467350f9c",
+      "changedSourceFiles": [],
+      "sourceFileCount": 2617,
+      "sourceInventorySha256": "d026d4020d80118bda6038aca8a92267507cce63d329778dc2ea0553141d189a",
+      "buildTools": {
+        "esbuild": "0.25.12",
+        "babel": "7.27.4"
+      },
+      "packageName": "@tdesign-tree-ab/vue-next",
+      "version": "0.0.0-f307a332",
+      "tarball": "tdesign-tree-ab-vue-next-0.0.0-f307a332.tgz",
+      "integrity": "sha512-Voppkfrczd4Z3JR5vXBUGXl+5ulxSiKn7larQbRpd3w3gMZTcGamVDMQbmtJFDpIElnOCMgNJPDscxnFbjwQkQ==",
+      "url": "https://github.com/RSS1102/tdesign-tree-disabled-ab/releases/download/tree-ab-deps-v1/tdesign-tree-ab-vue-next-0.0.0-f307a332.tgz"
+    },
+    {
+      "framework": "vue-next",
+      "variant": "after",
+      "componentCommit": "9005d97748a73eb02b5667e5f25a5ad3f3c1a65c",
+      "baselineCommon": "f307a332775af54e3797b4b9c80d48ebcda8e5bb",
+      "fixCommit": "2d5d75f7373854b8590f9e1ef2e5fe8467350f9c",
+      "changedSourceFiles": [
+        "packages/common/js/tree/tree-node.ts",
+        "packages/common/js/tree/tree-store.ts"
+      ],
+      "sourceFileCount": 2617,
+      "sourceInventorySha256": "28b2d7a188806e4b71770397b2596b73a131b6167944542ccfe2fb8bfce6042d",
+      "buildTools": {
+        "esbuild": "0.25.12",
+        "babel": "7.27.4"
+      },
+      "packageName": "@tdesign-tree-ab/vue-next",
+      "version": "0.0.0-2d5d75f7",
+      "tarball": "tdesign-tree-ab-vue-next-0.0.0-2d5d75f7.tgz",
+      "integrity": "sha512-K0E29udbSeAReGe82HLx4kI1kdIRnkOP+j/S/nJs1KeYbTg6frkxi2QVGv303oLVB7GW3iF3dFHkWZesKIeD2w==",
+      "url": "https://github.com/RSS1102/tdesign-tree-disabled-ab/releases/download/tree-ab-deps-v1/tdesign-tree-ab-vue-next-0.0.0-2d5d75f7.tgz"
+    }
+  ]
+}
