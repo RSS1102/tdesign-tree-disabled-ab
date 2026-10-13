@@ -71,6 +71,7 @@ function inventory(directory, prefix = "") {
 const manifest = {
   release: "tree-ab-deps-v1",
   baselineCommon: baseline,
+  distributionCommit: "2dbefcbfb645572d00994638e70f34ba11244ba1",
   fixtures: [],
 };
 try {
@@ -326,7 +327,7 @@ try {
         version: packageJson.version,
         tarball: packed.filename,
         integrity: packed.integrity,
-        url: `https://github.com/RSS1102/tdesign-tree-disabled-ab/releases/download/${manifest.release}/${packed.filename}`,
+        url: `https://cdn.jsdelivr.net/gh/RSS1102/tdesign-tree-disabled-ab@${manifest.distributionCommit}/${packed.filename}`,
       });
       console.log(`${framework.framework} ${variant}: ${packed.filename}`);
     }

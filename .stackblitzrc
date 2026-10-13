@@ -1,3 +1,4 @@
 {
-  "startCommand": "npm run dev"
+  "installDependencies": false,
+  "startCommand": "npm run setup && npm run dev"
 }

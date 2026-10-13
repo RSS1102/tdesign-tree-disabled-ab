@@ -19,7 +19,7 @@
       "version": "0.0.0-f307a332",
       "tarball": "tdesign-tree-ab-react-0.0.0-f307a332.tgz",
       "integrity": "sha512-k+mbh4Gh3XHHtgRWADQTU4wlaacdPsm1IAhgDR21P0ynXnbQ5yxc6MrDZ1Y8kCyTuURhFj+DsGbgymvF/GjdzA==",
-      "url": "https://github.com/RSS1102/tdesign-tree-disabled-ab/releases/download/tree-ab-deps-v1/tdesign-tree-ab-react-0.0.0-f307a332.tgz"
+      "url": "https://cdn.jsdelivr.net/gh/RSS1102/tdesign-tree-disabled-ab@2dbefcbfb645572d00994638e70f34ba11244ba1/tdesign-tree-ab-react-0.0.0-f307a332.tgz"
     },
     {
       "framework": "react",
@@ -41,7 +41,7 @@
       "version": "0.0.0-d4f2e934",
       "tarball": "tdesign-tree-ab-react-0.0.0-d4f2e934.tgz",
       "integrity": "sha512-faCgm6Xq2eAPJioxR8YPw9UMKe3sk5B/4QNxTJplKe3HyWK/mM3ZX3x1Av+lZLOaoegtVkB1RPygiTyhyeFNjQ==",
-      "url": "https://github.com/RSS1102/tdesign-tree-disabled-ab/releases/download/tree-ab-deps-v1/tdesign-tree-ab-react-0.0.0-d4f2e934.tgz"
+      "url": "https://cdn.jsdelivr.net/gh/RSS1102/tdesign-tree-disabled-ab@2dbefcbfb645572d00994638e70f34ba11244ba1/tdesign-tree-ab-react-0.0.0-d4f2e934.tgz"
     },
     {
       "framework": "vue-next",
@@ -60,7 +60,7 @@
       "version": "0.0.0-f307a332",
       "tarball": "tdesign-tree-ab-vue-next-0.0.0-f307a332.tgz",
       "integrity": "sha512-Voppkfrczd4Z3JR5vXBUGXl+5ulxSiKn7larQbRpd3w3gMZTcGamVDMQbmtJFDpIElnOCMgNJPDscxnFbjwQkQ==",
-      "url": "https://github.com/RSS1102/tdesign-tree-disabled-ab/releases/download/tree-ab-deps-v1/tdesign-tree-ab-vue-next-0.0.0-f307a332.tgz"
+      "url": "https://cdn.jsdelivr.net/gh/RSS1102/tdesign-tree-disabled-ab@2dbefcbfb645572d00994638e70f34ba11244ba1/tdesign-tree-ab-vue-next-0.0.0-f307a332.tgz"
     },
     {
       "framework": "vue-next",
@@ -82,7 +82,8 @@
       "version": "0.0.0-2d5d75f7",
       "tarball": "tdesign-tree-ab-vue-next-0.0.0-2d5d75f7.tgz",
       "integrity": "sha512-K0E29udbSeAReGe82HLx4kI1kdIRnkOP+j/S/nJs1KeYbTg6frkxi2QVGv303oLVB7GW3iF3dFHkWZesKIeD2w==",
-      "url": "https://github.com/RSS1102/tdesign-tree-disabled-ab/releases/download/tree-ab-deps-v1/tdesign-tree-ab-vue-next-0.0.0-2d5d75f7.tgz"
+      "url": "https://cdn.jsdelivr.net/gh/RSS1102/tdesign-tree-disabled-ab@2dbefcbfb645572d00994638e70f34ba11244ba1/tdesign-tree-ab-vue-next-0.0.0-2d5d75f7.tgz"
     }
-  ]
+  ],
+  "distributionCommit": "2dbefcbfb645572d00994638e70f34ba11244ba1"
 }

@@ -7,7 +7,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest run",
-    "build:fixtures": "node scripts/build-fixtures.mjs"
+    "build:fixtures": "node scripts/build-fixtures.mjs",
+    "setup": "node scripts/fetch-fixtures.mjs && npm ci"
   },
   "dependencies": {
     "react": "18.3.1",
@@ -24,10 +25,10 @@
     "@popperjs/core": "2.11.8",
     "react-fast-compare": "3.2.2",
     "raf": "3.4.1",
-    "react-tree-before": "https://github.com/RSS1102/tdesign-tree-disabled-ab/releases/download/tree-ab-deps-v1/tdesign-tree-ab-react-0.0.0-f307a332.tgz",
-    "react-tree-after": "https://github.com/RSS1102/tdesign-tree-disabled-ab/releases/download/tree-ab-deps-v1/tdesign-tree-ab-react-0.0.0-d4f2e934.tgz",
-    "vue-next-tree-before": "https://github.com/RSS1102/tdesign-tree-disabled-ab/releases/download/tree-ab-deps-v1/tdesign-tree-ab-vue-next-0.0.0-f307a332.tgz",
-    "vue-next-tree-after": "https://github.com/RSS1102/tdesign-tree-disabled-ab/releases/download/tree-ab-deps-v1/tdesign-tree-ab-vue-next-0.0.0-2d5d75f7.tgz"
+    "react-tree-before": "file:.fixtures/tdesign-tree-ab-react-0.0.0-f307a332.tgz",
+    "react-tree-after": "file:.fixtures/tdesign-tree-ab-react-0.0.0-d4f2e934.tgz",
+    "vue-next-tree-before": "file:.fixtures/tdesign-tree-ab-vue-next-0.0.0-f307a332.tgz",
+    "vue-next-tree-after": "file:.fixtures/tdesign-tree-ab-vue-next-0.0.0-2d5d75f7.tgz"
   },
   "devDependencies": {
     "vite": "6.2.0",
