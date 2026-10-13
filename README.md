@@ -1,33 +1,64 @@
-# TDesign React / Vue Next Tree: disabled children A/B comparison
+# React / Vue Next Tree A/B comparison
 
-Switch between React (`tree-v1`) and Vue Next (`tree`). Each framework compares three value modes (`all`, `parentFirst`, `onlyLeaf`) using real controlled Tree components, the same data and CSS. Use the buttons to click P, A or B in all six trees, or reset. Vue Next is shown by default.
+Switch between React (`tree-v1`) and Vue Next (`tree`). Each framework displays before/after controlled Tree components for `all`, `parentFirst` and `onlyLeaf`. The data, CSS and shared runtime dependencies are identical. Vue Next is shown by default.
 
-## Frozen source provenance
+## Fixed dependencies
 
-- React component: Tencent/tdesign-react at `d31df33c` (Tree component unchanged from `f6a7f64c`).
-- A / before: Tencent/tdesign-common at `f307a332775af54e3797b4b9c80d48ebcda8e5bb`.
-- B / after: Tree fix at `d4f2e934bc5ff97e4198cc9ddeadbbc4b75010a8`.
-- Vue Next component: Tencent/tdesign-vue-next at `9005d97748a73eb02b5667e5f25a5ad3f3c1a65c`.
-- Vue Next / before: common `tree` at `f307a332775af54e3797b4b9c80d48ebcda8e5bb`.
-- Vue Next / after: common `tree` at `2d5d75f7373854b8590f9e1ef2e5fe8467350f9c`.
-- Common PR: https://github.com/Tencent/tdesign-common/pull/2732
+The demo imports four dependencies instead of committing compiled component bundles:
 
-`src/tree-before.js` and `src/tree-after.js` are source bundles of the actual components and TreeStore, not mocked callbacks or handwritten behavior. React, icons, lodash-es and react-transition-group are shared external dependencies. CSS is compiled from the same TDesign styles for both versions. `src/vue-tree-before.js` and `src/vue-tree-after.js` bundle the actual Vue Next Tree component (including its real checkbox and controlled-value hooks), with only its common tree model differing. Vue and Vue icons are pinned dependencies. No repository checkout or private dependency is required at runtime.
+| Dependency | Fixed package version | Component source | Common model |
+|---|---|---|---|
+| `react-tree-before` | `0.0.0-f307a332` | React `d31df33c` | Baseline `f307a332`, `tree-v1` |
+| `react-tree-after` | `0.0.0-d4f2e934` | Same React source | Same baseline, two fixed files from `d4f2e934` |
+| `vue-next-tree-before` | `0.0.0-f307a332` | Vue Next `9005d977` | Baseline `f307a332`, `tree` |
+| `vue-next-tree-after` | `0.0.0-2d5d75f7` | Same Vue Next source | Same baseline, two fixed files from `2d5d75f7` |
 
-## Expected results
+These are **Tree-only sandbox fixture packages built from real TDesign source**, not official npm releases. They contain the real Tree, Checkbox and controlled-value code. Their package names are `@tdesign-tree-ab/react` and `@tdesign-tree-ab/vue-next`; `package.json` installs each version under a distinct dependency name using a fixed GitHub Release tarball URL.
 
-P has enabled children A/B and disabled, unchecked D. Click P:
+Assets: [tree-ab-deps-v1](https://github.com/RSS1102/tdesign-tree-disabled-ab/releases/tag/tree-ab-deps-v1). `package-lock.json` pins the resolved URLs and SHA-512 integrity. Shared React, Vue, icons and utility packages are also pinned to exact versions. There are no install scripts in the fixture packages.
 
-| Mode | Before: parent half-selected | After: parent fully selected |
+## Only the common fix differs
+
+For each framework, the builder archives the **same component commit** and the **same baseline common commit** twice. For B, it replaces only:
+
+- React: `js/tree-v1/tree-node.ts`, `js/tree-v1/tree-store.ts`.
+- Vue Next: `js/tree/tree-node.ts`, `js/tree/tree-store.ts`.
+
+It compares every source-file hash and every bundled-input hash, and rejects any other difference. All other common files, framework code and shared styles remain unchanged. The resulting package bytes were reproduced identically in two builds.
+
+Full commits, source inventory hashes, changed files, package versions and integrity are in `fixtures.json`. Each installed package also contains `provenance.json`. The original four large `src/*before.js` / `src/*after.js` files have been removed.
+
+## Run and verify
+
+```sh
+npm ci
+npm run dev
+npm test
+npm run build
+```
+
+`npm test` runs 22 real controlled-component tests: 11 React and 11 Vue Next. Both suites reproduce the original problem in A, then verify parent checking/cancellation, enabled children deriving partial/full selection, and explicitly selected disabled values in B.
+
+To rebuild dependency assets, use local checkouts containing the exact commits recorded above:
+
+```sh
+npm run build:fixtures -- /path/to/tdesign-react /path/to/tdesign-vue-next /path/to/tdesign-common
+```
+
+This produces `.fixtures/*.tgz` and updates the provenance manifest; it does not modify the input repositories. Release assets are fixed: future package changes must use a new release tag and new locked integrity values.
+
+## Expected behavior
+
+P has enabled children A/B and disabled, unchecked D. Click P, or select A and then B:
+
+| Mode | A: P stays half selected | B: P becomes fully selected |
 |---|---|---|
 | all | `["A","B"]` | `["P","A","B"]` |
 | parentFirst | `["A","B"]` | `["P"]` |
 | onlyLeaf | `["A","B"]` | `["A","B"]` |
 
-Click P again to uncheck. Click A then B to reproduce the same full-selection difference. D remains disabled and unchecked throughout.
+Each real `onChange` result is immediately fed back as `value`. Click P again to cancel; D remains disabled and unchecked. Use reset before another sequence.
 
-The component is kept controlled: each real `onChange` result is immediately fed back as `value`, so the comparison also exercises serialization and value round-tripping.
+Common fix: [#2732](https://github.com/Tencent/tdesign-common/pull/2732), React integration: [#4423](https://github.com/Tencent/tdesign-react/pull/4423), Vue Next integration: [#6999](https://github.com/Tencent/tdesign-vue-next/pull/6999).
 
-Run locally with `npm ci && npm run dev`. Run the 11 real Vue controlled-component regression tests with `npm test` (jsdom).
-
-TDesign source is distributed under the MIT license (see LICENSE).
+TDesign source is distributed under the MIT license; see LICENSE.
